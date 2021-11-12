@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   
-resources :store
+resources :boards
 
-  root 'store#index'
+  root 'boards#index'
 
   # get '/store', to: 'store#index'
   # post '/store/create', to: 'store#create'
