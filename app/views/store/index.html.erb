@@ -1,15 +1,5 @@
 <h1> Home Page </h1>
 <ul>
-  <% @boards.each do |board| %>
-    <li>
-      <%=link_to board.id %>">
-        <%= board.title %>
-      </a>
-    </li>
-  <% end %>
-</ul>
-
-<ul>
     <% @boards.each do |board| %>
         <li>
         <%= board.title%>
