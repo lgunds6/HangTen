@@ -2,7 +2,6 @@
 <ul>
     <% @boards.each do |board| %>
         <li>
-        <%raise%>
         <%= link_to(board.title, "/boards/#{board.id}")%>
         </li>
         <li>
