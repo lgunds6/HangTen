@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :boards
 
-  root 'boards#index'
+  root 'pages#index'
 
   # get '/store', to: 'store#index'
   # post '/store/create', to: 'store#create'
