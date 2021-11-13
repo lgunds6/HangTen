@@ -2,3 +2,8 @@
 <h3>Condtion: <%= @board.condition %> </h3>
 <h3>Description: <%= @board.description %> </h3>
 <h3>Price: <%= @board.price %> </h3>
+
+<% if user_signed_in? && current_user.id == @board.user.id %>
+    <%= link_to "Edit", edit_board_path(@board) %>
+    <%= link_to "Delete", board_path(@board), method: :delete %>
+<% end %>

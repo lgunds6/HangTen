@@ -1,19 +1,13 @@
-<h1> Home Page </h1>
-<ul>
+<h1> Board Shop </h1>
     <% @boards.each do |board| %>
-        <li>
-        <%= link_to(board.title, "/boards/#{board.id}")%>
-        </li>
-        <li>
-        <%= board.condition%>
-        </li>
-        <li>
-        <%= board.description%>
-        </li>
-        <li>
-        <%= board.price%>
-        </li>
-    <% end %>
+    <h3><%= board.title%></h3>
+    <h5><%= board.condition%></h5>
+    <%# <p><%= board.description%></p>
+    <h5><%= board.price%></h5>
+    <%= link_to "View", board_path(board) %>
+    <%= link_to "Edit", edit_board_path(board) %>
+    <%= link_to "Delete", board_path(board) %>
+<% end %>
 
 
-</ul>
+
