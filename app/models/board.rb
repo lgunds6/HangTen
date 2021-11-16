@@ -4,5 +4,6 @@ class Board < ApplicationRecord
     validates :description, presence: true, length: {minimum: 10}
     validates :price, presence: true
     belongs_to :user
+    has_one_attached :picture
     
 end

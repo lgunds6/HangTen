@@ -1,8 +1,8 @@
 <h1> Board Shop </h1>
     <% @boards.each do |board| %>
+    <%= image_tag board.picture if board.picture.attached? %>
     <h3><%= board.title%></h3>
     <h5><%= board.condition%></h5>
-    <%# <p><%= board.description%></p>
     <h5><%= board.price%></h5>
     <%= link_to "View", board_path(board) %>
     <%= link_to "Edit", edit_board_path(board) %>
