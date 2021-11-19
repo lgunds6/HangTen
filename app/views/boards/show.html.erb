@@ -1,3 +1,5 @@
+
+<%# <%= image_tag(board.picture)if board.picture.attached? %>  %>
 <h3> <%= @board.title %> </h3>
 <h3>Condtion: <%= @board.condition %> </h3>
 <h3>Description: <%= @board.description %> </h3>
@@ -7,3 +9,4 @@
     <%= link_to "Edit", edit_board_path(@board) %>
     <%= link_to "Delete", board_path(@board), method: :delete %>
 <% end %>
+

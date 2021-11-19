@@ -1,26 +1,23 @@
 
-<div class="container">
-<h1> Board Shop </h1>
-<div class="card-deck">
+
+<h1 class="title"> Board Shop </h1>
+<div class="card-columns">
     <% @boards.each do |board| %>
-    <div class="row">
-    <div class="col-sm-6" style="min-width: 18rem;">
-        <%= image_tag(board.picture) if board.picture.attached? %>
-        <div class="card-body">
-                <h5 class="card-title"><%= board.title%></h5>
-                <p class="card-text"><%= board.condition%></p>
-                <h5 class="card-text mt-2"><%= board.price%></h5>
-                <%= link_to "View", board_path(board), class: "btn btn-primary" %>
-                <%=link_to 'Edit', edit_board_path(board), class: "btn btn-warning"%>
-                <%=link_to 'Delete', board_path(board), class: "btn btn-danger", method: "delete", data: { confirm: "Are you sure?" }%>
+        <div class="card">
+            <div class="card-block">
+                <%= image_tag(board.picture, class: 'image')if board.picture.attached? %> 
+                <h5 class="card-title"> <%= board.title%> </h5>
+                <p class="card-subtitle mb-2 text-muted"> <%= board.condition%> </p>
+                <h5 class="card-text mt-2"> <%= board.price%> </h5>
+                <div class="button">
+                    <%= button_to "View", board_path(board), class: "btn btn-primary" %>
+                    <%=button_to 'Edit', edit_board_path(board), class: "btn btn-warning"%>
+                    <%=button_to 'Delete', board_path(board), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" }%>
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
     <%end%>
 </div>
-</div>
-
- 
 
     
 
