@@ -10,8 +10,8 @@
                 <p class="card-subtitle mb-2 text-muted"> <%= board.condition%> </p>
                 <h5 class="card-text mt-2"> <%= board.price%> </h5>
                 <div class="button">
-                    <%= button_to "View", board_path(board), class: "btn btn-primary" %>
-                    <%=button_to 'Edit', edit_board_path(board), class: "btn btn-warning"%>
+                    <%= link_to "View", board_path(board), class: "btn btn-primary" %>
+                    <%=link_to 'Edit', edit_board_path(board), class: "btn btn-warning"%>
                     <%=button_to 'Delete', board_path(board), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" }%>
                 </div>
             </div>
