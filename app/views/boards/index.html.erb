@@ -1,5 +1,5 @@
 
-
+<div class="storefront">
 <h1 class="title"> Board Shop </h1>
 <div class="card-columns">
     <% @boards.each do |board| %>
@@ -11,14 +11,12 @@
                 <h5 class="card-text mt-2"> <%= board.price%> </h5>
                 <div class="button">
                     <%= link_to "View", board_path(board), class: "btn btn-primary" %>
-                    <%=link_to 'Edit', edit_board_path(board), class: "btn btn-warning"%>
-                    <%=button_to 'Delete', board_path(board), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" }%>
                 </div>
             </div>
         </div>
     <%end%>
 </div>
-
+</div>
     
 
 

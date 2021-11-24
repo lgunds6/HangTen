@@ -1,6 +1,8 @@
-// Place all the styles related to the store controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.storefront{
+    min-height: 100vh;
+    background-color: rgb(187, 235, 241);
+}
 
 .title{
     display: flex;
@@ -13,6 +15,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    
 }
 .card-block{
     display: flex;

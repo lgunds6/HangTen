@@ -1,15 +1,17 @@
-<%# <span class='nav-greeting'> <%= "Welcome, back #{current_user.username}"%></span> %>
-<nav class="navbar navbar-expand-lg navbar-dark bg-light">
-    <% if user_signed_in? %>
-    <%= link_to "Sign Out", destroy_user_session_path, method: "delete" %>
-    <%= link_to "Board Shop", "/boards"%>
-    <%= link_to "New Listing", "/boards/new"%>
-    <% else %>
-    <%= link_to "Sign In", new_user_session_path %>
-    <%= link_to "Sign Out", new_user_registration_path %>
-    <%= link_to "Board Shop", "/boards"%>
-    <%= link_to "New Listing", "/boards/new"%>
-    <%end%>
 
+
+<nav>
+    <ul>
+        <% if user_signed_in? %>
+        <li> <%= button_to "Sign Out", destroy_user_session_path, method: "delete", class: 'nav-text' %> </li>
+        <li><%= link_to "Board Shop", "/boards", class: 'nav-text' %> </li>
+        <li><%= link_to "New Listing", "/boards/new", class: 'nav-text' %> </li>
+        <% else %>
+        <li><%= link_to "Sign In", new_user_session_path, class: 'nav-text' %> </li>
+        <li><%= link_to "Board Shop", "/boards", class: 'nav-text' %> </li>
+        <li><%= link_to "New Listing", "/boards/new", class: 'nav-text' %> </li>
+   </ul>
+<%end%>
 </nav>
+
 
