@@ -7,26 +7,24 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find_by(id: params[:id])
+    if current_user
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       mode: 'payment',
-      # customer_email: current_user.email,
       line_items: [{
         price_data: {
           product_data: {
             name: @board.title,
             description: @board.description
-            #   images: ["https://unsplash.com/photos/LCDYCLEJlEo"]
           },
           currency: 'aud',
           unit_amount: @board.price_in_cents
-          # tax_behavior: 'inclusive'
         },
         quantity: 1
       }],
       payment_intent_data: {
         metadata: {
-          dish_id: @board.id,
+          board_id: @board.id,
           user_id: current_user.id
         }
       },
@@ -34,6 +32,7 @@ class BoardsController < ApplicationController
       cancel_url: URI.join(root_url, payments_cancel_path)
     )
     @session_id = session.id
+  end
   end
 
   def new

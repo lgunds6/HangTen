@@ -1,18 +1,13 @@
-
 .hero_image {
     display: flex;
     justify-content: center;
     background-image: url('https://hangtenboardshop.s3.ap-southeast-2.amazonaws.com/hero_image2.jpeg');
     width: 100vw;
     height: 100vh;
-    
-    h1{
-        font-size: 5rem;
-        color: rgb(224, 223, 223);
-        font-family: 'Luckiest Guy', cursive;
-        padding-top: 150px;
-
-        
-        
-    }
+}
+h1{
+    font-size: 5rem;
+    color: rgb(224, 223, 223);
+    font-family: 'Luckiest Guy', cursive;
+    padding-top: 150px;      
 }

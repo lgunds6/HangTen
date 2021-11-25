@@ -1,21 +1,20 @@
-
 <div class="storefront">
-<h1 class="title"> Board Shop </h1>
-<div class="card-columns">
-    <% @boards.each do |board| %>
-        <div class="card">
-            <div class="card-block">
-                <%= image_tag(board.picture, class: 'image')if board.picture.attached? %> 
-                <h5 class="card-title"> <%= board.title%> </h5>
-                <p class="card-subtitle mb-2 text-muted"> <%= board.condition%> </p>
-                <h5 class="card-text mt-2"> <%= board.price%> </h5>
-                <div class="button">
-                    <%= link_to "View", board_path(board), class: "btn btn-primary" %>
+    <h1 class="title"> Board Shop </h1>
+        <div class="card-columns">
+            <% @boards.each do |board| %>
+                <div class="card">
+                    <div class="card-block">
+                        <%= image_tag(board.picture, class: 'image')if board.picture.attached? %> 
+                        <h5 class="card-title"> <%= board.title%> </h5>
+                        <p class="card-subtitle mb-2 text-muted"> <%= board.condition%> </p>
+                        <h5 class="card-text mt-2"> <%= board.price%> </h5>
+                        <div class="button">
+                            <%= link_to "View", board_path(board), class: "btn btn-primary" %>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            <%end%>
         </div>
-    <%end%>
-</div>
 </div>
     
 
