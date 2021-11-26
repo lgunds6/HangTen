@@ -44,16 +44,20 @@ Hang Ten Boards is a two sided marketplace.
 ### Tech Stack
 - HTML
 - CSS
-- Bootstrap
-- Ruby on Rails
+- Bootstrap - 5.1.3
+- Ruby on Rails - 6.1.4.1
 - Deployment - Heroku
 - Image service - AWS S3
 - Payment Gateway - Stripe
 - DB - PostgreSQL
 
 ## User Stories - R12
+Please see trello board link below for user stories.
+Trello board: https://trello.com/b/6n6BAtbQ/t2a2-market-place
 
 ## Wireframes - R13
+![Application sitemap!](app/assets/images/wireframes-desktop.png)
+![Application sitemap!](app/assets/images/wireframes-mob/tab.png)
 
 ## ERD - R14
 ![Application sitemap!](app/assets/images/ERD.png)
@@ -62,18 +66,19 @@ I have included a dotted line from the board image line to the active storage ta
 
 ## High-Level Components - R15
 The high-level components of Hang Ten Boards are ass follows:
-- Boards controller will speak to the User model to authenticate current user or allow  user to login or sign up. When a user is createing a new listing the boards controller will speak to teh boards model to validate the aprameters before adding to the database. When a user views a baord the boards controller will speak to the boards controller and fetch the boards data from the database and the controller will pass this info to the correct view.
+- Boards controller will speak to the User model to authenticate current user or allow  user to login or sign up. When a user is createing a new listing the boards controller will speak to the boards model to validate the parameters before adding to the database. When a user views a board the boards controller will speak to the boards model which will ask the DB to fetch the boards data and feed this  data to the controller. The controller will pass this info to the correct view.
 
 ## Third Party Services - R16
-Deployement - Heroku
-Image service - AWS S3
-Payment gateway - Strip
+- Deployement - Heroku
+- Image service - AWS S3
+- Payment gateway - Strip
 
 ## Models and relationships - R17
--  User.rb model has_many relationship with the Board.rb model and the Board.rb has a belongs_to relationship wwith User.rb model as each board must belong to one user. Board.rb also can connect to active storage with a has_one_attached image.
+-  User.rb model has_many relationship with the Board.rb model as a user can own many boards.
+- The Board.rb has a belongs_to relationship with User.rb model as each board must belong to one user. Board.rb also can connect to active storage with a has_one_attached image.
 
 ## Database relations - R18
-We have two database tables used in the application. One table for boards and one table for users. These tables are joined using the user id. Every user from the user table will have a user id, this user id is the foreign key to a board within the boards table joining the user and board/s together. 
+We have two database tables used in the application. One table for boards and one table for users. These tables are joined using the user id. Every user from the user table will have a user id which is the primary key, this user id is the foreign key to a board/s within the boards table joining the user and board/s together. 
 
 ## Datacse schema - R19
 Please see ERD above. 
@@ -81,28 +86,16 @@ Please see ERD above.
 ## Project tracking - R20
 I have created user stories based on all actions a user can perform within the app. Each user story has a checklist of features/sstylings/steps that must be ticked off before that user story can move to test. Once the alll tests  have been completed the user story moves to completed.
 If the user story has a dependency this is added in the checklist along with the dependency user story to ensure they are test together.  
+Please see trello board link below for a detailed view of all user stories.
 
+Trello: https://trello.com/b/6n6BAtbQ/t2a2-market-place
 
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## System dependencies
+- gem 'aws-sdk-s3', '~> 1.105'
+- gem 'bootstrap', '~> 5.1.3'
+- gem 'devise'
+- gem 'jquery-rails'
+- gem 'stripe', '~> 5.41'
+- Rails 6.1.4.1P
+- Ruby 2.7.2 or higher
+- Database - PostgreSQL
