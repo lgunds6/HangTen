@@ -49,9 +49,38 @@ Hang Ten Boards is a two sided marketplace.
 - Deployment - Heroku
 - Image service - AWS S3
 - Payment Gateway - Stripe
+- DB - PostgreSQL
 
+## User Stories - R12
 
+## Wireframes - R13
 
+## ERD - R14
+![Application sitemap!](app/assets/images/ERD.png)
+
+I have included a dotted line from the board image line to the active storage table as there is no connection within the data base but active stroage manages the files that are uploaded and stored within AWS.
+
+## High-Level Components - R15
+The high-level components of Hang Ten Boards are ass follows:
+- Boards controller will speak to the User model to authenticate current user or allow  user to login or sign up. When a user is createing a new listing the boards controller will speak to teh boards model to validate the aprameters before adding to the database. When a user views a baord the boards controller will speak to the boards controller and fetch the boards data from the database and the controller will pass this info to the correct view.
+
+## Third Party Services - R16
+Deployement - Heroku
+Image service - AWS S3
+Payment gateway - Strip
+
+## Models and relationships - R17
+-  User.rb model has_many relationship with the Board.rb model and the Board.rb has a belongs_to relationship wwith User.rb model as each board must belong to one user. Board.rb also can connect to active storage with a has_one_attached image.
+
+## Database relations - R18
+We have two database tables used in the application. One table for boards and one table for users. These tables are joined using the user id. Every user from the user table will have a user id, this user id is the foreign key to a board within the boards table joining the user and board/s together. 
+
+## Datacse schema - R19
+Please see ERD above. 
+
+## Project tracking - R20
+I have created user stories based on all actions a user can perform within the app. Each user story has a checklist of features/sstylings/steps that must be ticked off before that user story can move to test. Once the alll tests  have been completed the user story moves to completed.
+If the user story has a dependency this is added in the checklist along with the dependency user story to ensure they are test together.  
 
 
 

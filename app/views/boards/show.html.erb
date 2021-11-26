@@ -1,6 +1,6 @@
 <div class="card-columns">
     <div class="card">
-        <%= image_tag(@board.picture) %>
+        <%= image_tag(@board.picture, class: 'image') %>
         <div class="card-block">
             <h3> <%= @board.title %> </h3>
             <h3>Condtion: <%= @board.condition %> </h3>
@@ -11,7 +11,6 @@
             <%else%>
             <h4> Sign in to purchase </h4>
             <%end%>
-            <%= link_to 'Back', board_path %>
             <script src="https://js.stripe.com/v3/"></script>
             <script>
                 document.querySelector("[data-stripe='payment']").addEventListener("click", () => {
